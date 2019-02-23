@@ -1,0 +1,372 @@
+$height: 400px;
+$width: 600px;
+$duration: 3s;
+$skyLevel: 5000px;
+$cloudWidth: 300px;
+$cloudDuration: 20s;
+
+.envelope
+{
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__sheet
+    {
+        position: relative;
+
+        top: calc(50vh - #{$height / 2});
+
+        animation: envelope-floating 3s ease-in-out;
+        animation-iteration-count: 2;
+    }
+
+    &_opened
+    {
+        .envelope
+        {   
+            &__head
+            {
+                animation: envelope-head-out $duration ease-in-out;
+                animation-fill-mode: forwards;
+            }
+
+            &__letter
+            {
+                animation: envelope-letter-out $duration ease-in-out;
+                animation-fill-mode: forwards;
+            }
+
+            &__sheet
+            {
+                animation: envelope-sheet-out $duration ease-in-out;
+                animation-fill-mode: forwards;
+            }
+
+            &__shadow
+            {
+                animation: envelope-shadow-out $duration ease-in-out;
+                animation-fill-mode: forwards;
+            }
+
+            &__background
+            {
+                animation: envelope-background-out $duration ease-in-out;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+
+    &__front-cover
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        z-index: 1;
+    }
+
+    &__head
+    {
+        z-index: 1;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: .3s;
+
+        transform-origin: center top;
+    }
+
+    &__letter
+    {
+        position: absolute;
+
+        top: 20px;
+        left: 50%;
+
+        transition: .3s;
+
+        transform: translate(-50%, 0) scale(.5);
+    }
+
+    &__shadow
+    {
+        position: absolute;
+        width: $width;
+        height: 20px;
+        top: calc(50vh + #{$height / 2});
+        margin: 0 auto;
+
+        background: rgba(0, 0, 0, .5);
+        background: radial-gradient(ellipse at center, rgba(0, 0, 0, .2) 20%, transparent 77%);
+        animation: envelope-shadow-sizing 3s infinite ease-in-out;
+    }
+
+    &__background
+    {
+        position: fixed;
+        width: 100%;
+        height: calc(100vh + #{$skyLevel});
+        bottom: 0;
+        background: linear-gradient(to top, #00b894 0%, #81ecec 100%);
+        background-size: 2000px auto;
+    }
+
+    &__sun
+    {
+        width: 200px;
+        position: absolute;
+        right: 50px;
+        top: 25px;
+
+        animation: envelope-sun 10s linear infinite;
+    }
+
+    &__cloud
+    {
+        width: 300px;
+        position: absolute;
+        animation: envelope-cloud 40s linear infinite;
+        opacity: .5;
+        left: 300px;
+
+        &:nth-child(2)
+        {
+            top: 250px;
+
+            width: $cloudWidth * .8;
+            animation-duration: $cloudDuration * .8;
+        }
+
+        &:nth-child(3)
+        {
+            top: 400px;
+            width: $cloudWidth * .5;
+            animation-duration: $cloudDuration * .1.5;
+        }
+
+        &:nth-child(4)
+        {
+            top: 0px;
+            left: 100px;
+            width: $cloudWidth * 1.1;
+            animation-duration: $cloudDuration * .1.1;
+        }
+
+        &:nth-child(5)
+        {
+            top: 300px;
+            left: 50px;
+            width: $cloudWidth * .9;
+            animation-duration: $cloudDuration * .9;
+        }
+
+        &:nth-child(6)
+        {
+            top: 150px;
+            left: 20px;
+            width: $cloudWidth;
+            animation-duration: $cloudDuration * 1.8;
+        }
+        
+
+        &:nth-child(7)
+        {
+            top: 400px;
+            left: 20px;
+            width: $cloudWidth;
+            animation-duration: $cloudDuration * 0.5;
+        }
+    }
+}
+
+@keyframes envelope-floating
+{
+    0%
+    {
+        transform: translate(0, -50px);
+    }
+
+    50%
+    {
+        transform: translate(0, -100px);
+    }
+
+    100%
+    {
+        transform: translate(0, -50px);
+    }
+}
+
+@keyframes envelope-shadow-sizing
+{
+    0%
+    {
+        transform: scale(1, 1)
+    }
+
+    50%
+    {
+        transform: scale(.8, 1)
+    }
+
+    100%
+    {
+        transform: scale(1, 1)
+    }
+}
+
+@keyframes envelope-letter-out
+{
+    0%
+    {
+        transform: translate(-50%, 0) scale(.5);
+    }
+
+    50%
+    {
+        z-index: 1;
+        transform: translate(-50%, 0) scale(.5);
+    }
+
+    70%
+    {
+        z-index: 1;
+    }
+
+    100%
+    {
+        transform: translate(-50%, #{-1 * $skyLevel - 50px});
+        z-index: 1;
+    }
+}
+
+@keyframes envelope-sheet-out
+{
+    0%
+    {
+        transform: translate(0, -50px);
+    }
+
+    50%
+    {
+        transform: translate(0, -50px);
+    }
+
+    100%
+    {
+        transform: translate(0, $skyLevel + 50px);
+    }
+}
+
+@keyframes envelope-shadow-out
+{
+    0%
+    {
+        transform: translate(0, 0px);
+    }
+
+    50%
+    {
+        transform: translate(0, 0px);
+    }
+
+    100%
+    {
+        transform: translate(0, $skyLevel + 50px);
+    }
+}
+
+@keyframes envelope-front-cover-out
+{
+    0%
+    {
+        z-index: 1;
+    }
+
+    50%
+    {
+        z-index: 1;
+        transform: translate(0, -50px);
+    }
+
+    70%
+    {
+        z-index: 1;
+    }
+
+    100%
+    {
+        z-index: 0;
+
+        transform: translate(0, $skyLevel);
+    }
+}
+
+@keyframes envelope-head-out 
+{
+    0%
+    {
+        z-index: 1;
+    }
+
+    50%
+    {
+        z-index: 0;
+        transform: translate(0, 10px) rotateX(180deg);
+    }
+
+    100%
+    {
+        z-index: 0;
+        transform: translate(0, 10px) rotateX(180deg);
+    }
+}
+
+@keyframes envelope-background-out
+{
+    50%
+    {
+        transform: translateY(0);
+    }
+
+    100%
+    {
+        transform: translateY($skyLevel);
+    }
+}
+
+@keyframes envelope-sun
+{
+    0%
+    {
+        transform: rotateZ(0);
+    }
+
+    50%
+    {
+        transform: rotateZ(180deg);
+    }
+
+    100%
+    {
+        transform: rotateZ(360deg);
+    }
+}
+
+
+@keyframes envelope-cloud
+{
+    0%
+    {
+        transform: translateX(-600px);
+    }
+
+    100%
+    {
+        transform: translateX(calc(100vw + 100px))
+    }
+}
