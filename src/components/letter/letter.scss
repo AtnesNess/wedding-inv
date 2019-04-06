@@ -2,11 +2,126 @@
 
 .letter
 {
-    border: 1px solid black;
-    width: 800px;
-    height: 400px; 
+    padding: 50px 50px 80px;
 
-    background: green;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 800px;
+    height: 370px;
+
+    line-height: 50px;
+
+
+    background: #f1f2f6;
 
     z-index: 1;
+
+    font-size: 40px;
+
+    text-align: justify;
+
+    p
+    {
+        margin: 0;
+    }
+
+
+    &__title
+    {
+        margin: 0 auto;
+
+        font-size: 50px;
+        line-height: 80px;
+
+        text-align: center;
+    }
+
+    &__text
+    {
+        display: flex;
+        flex-direction: column;
+
+        justify-content: space-between;
+        flex: 1;
+    }
+
+    &__buttons
+    {
+        display: flex;
+
+        position: absolute;
+
+        justify-content: space-around;
+        bottom: 20px;
+        right: 20px;
+
+        width: 300px;
+    }
+
+    &__spin
+    {
+        margin: 10px;
+
+        transform: translateX(50%);
+    }
+
+    &__button
+    {
+        border: none;
+        outline: none;
+        padding: 10px 20px;
+        margin: 0 5px;
+        font-size: 20px;
+
+        font-family: Helvetica, sans-serif;
+        
+        cursor: pointer;
+
+
+        &_type
+        {
+            &_approve
+            {
+
+                background: #7bed9f;
+
+                &:hover
+                {
+                    background: #2ed573;
+                }
+
+                &:active
+                {
+                    background: #2ccb6e;
+                }
+            }
+
+            &_reject
+            {
+                background: #ff6b81;
+
+                &:hover
+                {
+                    background: #ff4757;
+                }
+
+                &:active
+                {
+                    background: #db4352;
+                }
+            }
+        }
+    }
+
+    &__palette
+    {
+        width: 400px;
+
+        position: absolute;
+
+        margin: 0 20px;
+    }
 }

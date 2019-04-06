@@ -9,7 +9,11 @@
 /coverage
 
 # production
-/build
+/build/**/*
+!/build/.gitkeeper
+!/build/static/.gitkeeper
+/venv
+/**/__pycache__
 
 # misc
 .DS_Store
@@ -21,3 +25,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.idea

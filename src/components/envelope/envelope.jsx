@@ -1,6 +1,6 @@
 import b from 'b_';
-import PropTypes from 'prop-types';
 import React from 'react';
+import qs from 'query-string';
 
 import Letter from '../letter/letter';
 
@@ -28,6 +28,8 @@ export default class Envelope extends React.Component {
 
     render() {
         const {opened} = this.state;
+        const {location: {search}} = window;
+        const {user} = qs.parse(search);
 
         return (
             <section className={b('envelope', {opened})}>
@@ -109,6 +111,10 @@ export default class Envelope extends React.Component {
                             <path fill={HEAD_COLOR} d="M 0.27263699,0.3362463 79.37905,55.121076 159.02264,0.3362463 Z" />
                         </g>
                     </svg>
+                     <section className="envelope__signature">
+                         <div>Отправитель:  Несмияновы Артем и Елена</div>
+                         <div>Получатель: {user || 'Любопытный человек'}</div>
+                    </section>
                 </div>    
                 <div className="envelope__shadow" />
             </section>

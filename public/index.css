@@ -1,0 +1,8 @@
+ @font-face {
+  font-family: 'Acquest Script';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Acquest Script'), local('AcquestScript-Regular'),
+      url('./acquest-script.woff') format('woff'),
+      url('./acquest-script.ttf') format('truetype');
+}
