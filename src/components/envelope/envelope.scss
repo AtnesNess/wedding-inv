@@ -1,26 +1,267 @@
 $height: 400px;
 $width: 600px;
 $duration: 3s;
-$skyLevel: 5000px;
 $cloudWidth: 300px;
-$cloudDuration: 20s;
+$windDuration: 10s;
+$leaveFallDuration: 30s;
+$transformTop: 900px;
+$letterTransformTop: 250px;
 
 .envelope
 {
-    height: 100vh;
+    min-height: 900px;
 
     display: flex;
     align-items: center;
     flex-direction: column;
 
+    &__leaf
+    {
+        &_floating
+        {
+            transform-origin: top center;
+            animation: envelope-leave-animation-1 $leaveFallDuration infinite;
+            animation-timing-function: linear;
+        }
+    }
+
     &__sheet
     {
         position: relative;
 
-        top: calc(50vh - #{$height / 2});
+        top: calc(50vh - 150px);
 
         animation: envelope-floating $duration ease-in-out;
         animation-iteration-count: 2;
+    }
+
+    &__right-bottom-leaves
+    {
+        .envelope__leaf
+        {
+            position: absolute;
+
+            transform-origin: center bottom;
+            animation: envelope-right-bottom-leaves-animation $windDuration infinite;
+
+            &:nth-child(1)
+            {
+                right: -50px;
+                bottom: -156px;
+            }
+
+            &:nth-child(2)
+            {
+                right: 23px;
+                bottom: -132px;
+            }
+
+            &:nth-child(3)
+            {
+                right: 204px;
+                bottom: -251px;
+            }
+        }
+    }
+
+    &__left-bottom-leaf
+    {
+        .envelope__leaf
+        {
+            transform-origin: center bottom;
+            animation: envelope-left-bottom-leaves-animation $windDuration infinite;
+
+            position: absolute;
+
+            left: -346px;
+            bottom: -237px;
+        }
+    }
+
+    &__left-top-leaf
+    {
+        .envelope__leaf
+        {
+            transform-origin: right top;
+            animation: envelope-left-top-leaves-animation $windDuration infinite;
+
+
+            position: absolute;
+
+            left: -170px;
+            top: -267px;
+        }
+    }
+
+    &__leaves-back-group
+    {
+        .envelope__leaf
+        {
+            position: absolute;
+
+            
+            &:nth-child(1)
+            {
+                right: -10vw;
+                top: -5vh;
+                animation-delay: 2s;
+            }
+
+            &:nth-child(2)
+            {
+                right: -10vw;
+                top: -5vh;
+                animation-delay: 4s;
+            }
+
+            &:nth-child(3)
+            {
+                right: -10vw;
+                top: -5vh;
+                animation-delay: 8s;
+            }
+
+            &:nth-child(4)
+            {
+                right: -10vw;
+                top: -5vh;
+                animation-delay: 12s;
+            }
+
+            &:nth-child(5)
+            {
+                right: -10vw;
+                top: -5vh;
+                animation-delay: 16s;
+            }
+
+            &:nth-child(6)
+            {
+                right: -10vw;
+                top: -5vh;
+                animation-delay: 18s;
+            }
+
+            &:nth-child(7)
+            {
+                right: -10vw;
+                top: -5vh;
+                animation-delay: 20s;
+            }
+
+            &:nth-child(8)
+            {
+                right: -10vw;
+                top: -5vh;
+                animation-delay: 25s;
+            }
+            &:nth-child(9)
+            {
+                right: -10vw;
+                top: -5vh;
+                animation-delay: 27s;
+            }
+
+            &:nth-child(10)
+            {
+                right: -20vw;
+                top: -20vh;
+                animation-delay: 29s;
+            }
+
+            &:nth-child(11)
+            {
+                right: -30vw;
+                top: -5vh;
+                animation-delay: 2s;
+            }
+
+            &:nth-child(12)
+            {
+                right: -25vw;
+                top: -7vh;
+                animation-delay: 4s;
+            }
+
+            &:nth-child(13)
+            {
+                right: -15vw;
+                top: -20vh;
+                animation-delay: 9s;
+            }
+
+            &:nth-child(14)
+            {
+                right: -100vw;
+                top: -50vh;
+                animation-delay: 14s;
+            }
+
+            &:nth-child(15)
+            {
+                right: -200vw;
+                top: -50vh;
+                animation-delay: 16s;
+            }
+
+            &:nth-child(16)
+            {
+                right: -20vw;
+                top: -30vh;
+                animation-delay: 19s;
+            }
+           
+        }
+    }
+
+    &__leaves-front-group
+    {
+        .envelope__leaf
+        {
+            position: absolute;
+
+            &:nth-child(1)
+            {
+                right: -100vw;
+                top: -200vh;
+                animation-delay: 5s;
+            }
+
+            &:nth-child(2)
+            {
+                right: -10vw;
+                top: -20vh;
+                animation-delay: 7s;
+            }
+
+            &:nth-child(3)
+            {
+                right: 10vw;
+                top: -25vh;
+                animation-delay: 1s;
+            }
+
+            &:nth-child(4)
+            {
+                right: 20vw;
+                top: -12vh;
+                animation-delay: 9s;
+            }
+
+            &:nth-child(5)
+            {
+                right: -50vw;
+                top: -150vh;
+                animation-delay: 12s;
+            }
+
+            &:nth-child(6)
+            {
+                right: -2vw;
+                top: -40vh;
+                animation-delay: 15s;
+            }
+        }
     }
 
     &_opened
@@ -39,21 +280,15 @@ $cloudDuration: 20s;
                 animation-fill-mode: forwards;
             }
 
+            &__letter-container
+            {
+                animation: envelope-letter-container-out $duration ease-in-out;
+                animation-fill-mode: forwards;
+            }
+
             &__sheet
             {
                 animation: envelope-sheet-out $duration ease-in-out;
-                animation-fill-mode: forwards;
-            }
-
-            &__shadow
-            {
-                animation: envelope-shadow-out $duration ease-in-out;
-                animation-fill-mode: forwards;
-            }
-
-            &__background
-            {
-                animation: envelope-background-out $duration ease-in-out;
                 animation-fill-mode: forwards;
             }
         }
@@ -84,123 +319,70 @@ $cloudDuration: 20s;
     {
         position: absolute;
 
-        top: 20px;
-        left: 50%;
-
         transition: .3s;
 
-        transform: translate(-50%, 0) scale(.5);
-    }
-
-    &__shadow
-    {
-        position: absolute;
-        width: $width;
-        height: 20px;
-        top: calc(50vh + #{$height / 2});
-        margin: 0 auto;
-
-        background: rgba(0, 0, 0, .5);
-        background: radial-gradient(ellipse at center, rgba(0, 0, 0, .2) 20%, transparent 77%);
-        animation: envelope-shadow-sizing 3s infinite ease-in-out;
-    }
-
-    &__background
-    {
-        position: absolute;
-        width: 100%;
-        height: calc(100vh + #{$skyLevel});
+        transform: translate(0, $letterTransformTop);
         bottom: 0;
-        background: linear-gradient(to top, #00b894 0%, #81ecec 100%);
-        background-size: 2000px auto;
+    }
 
+    &__letter-container
+    {
+        position: absolute;
+
+        display: flex;
+        justify-content: center;
+        
+        height: 5000px;
+        width: 693px;
+        bottom: 10px;
         overflow: hidden;
     }
 
-    &__sun
+    &__background,
+    &__foreground
     {
-        width: 200px;
+        pointer-events: none;
         position: absolute;
-        right: 50px;
-        top: 25px;
-
-        animation: envelope-sun 10s linear infinite;
-    }
-
-    &__cloud
-    {
-        width: 300px;
-        position: absolute;
-        animation: envelope-cloud 40s linear infinite;
-        opacity: .5;
-        left: 300px;
-
-        &:nth-child(2)
-        {
-            top: 250px;
-
-            width: $cloudWidth * .8;
-            animation-duration: $cloudDuration * .8;
-        }
-
-        &:nth-child(3)
-        {
-            top: 400px;
-            width: $cloudWidth * .5;
-            animation-duration: $cloudDuration * .1.5;
-        }
-
-        &:nth-child(4)
-        {
-            top: 0px;
-            left: 100px;
-            width: $cloudWidth * 1.1;
-            animation-duration: $cloudDuration * .1.1;
-        }
-
-        &:nth-child(5)
-        {
-            top: 300px;
-            left: 50px;
-            width: $cloudWidth * .9;
-            animation-duration: $cloudDuration * .9;
-        }
-
-        &:nth-child(6)
-        {
-            top: 150px;
-            left: 20px;
-            width: $cloudWidth;
-            animation-duration: $cloudDuration * 1.8;
-        }
-        
-
-        &:nth-child(7)
-        {
-            top: 400px;
-            left: 20px;
-            width: $cloudWidth;
-            animation-duration: $cloudDuration * 0.5;
-        }
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
     }
 
     &__signature
     {
         position: absolute;
 
-        line-height: 2;
-        font-size: 20px;
+        width: calc(100% - 50px);
+
+        box-sizing: border-box;
+        
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.1em;
+        font-family: Merriweather;
 
         bottom: 25px;
         left: 25px;
 
         z-index: 1;
 
-        color: #916d3d;
+        color: #7a7a7a;
 
         padding: 25px;
 
-        background: #fbdc7f;
+        background: #fff;
+    }
+
+    &__signature-label
+    {
+        &:nth-of-type(2)
+        {
+            margin-top: 20px;
+        }
+
+        display: block;   
     }
 }
 
@@ -222,35 +404,17 @@ $cloudDuration: 20s;
     }
 }
 
-@keyframes envelope-shadow-sizing
-{
-    0%
-    {
-        transform: scale(1, 1)
-    }
-
-    50%
-    {
-        transform: scale(.8, 1)
-    }
-
-    100%
-    {
-        transform: scale(1, 1)
-    }
-}
-
 @keyframes envelope-letter-out
 {
     0%
     {
-        transform: translate(-50%, 0) scale(.5);
+        transform: translate(0, $letterTransformTop);
     }
 
-    50%
+    55%
     {
         z-index: 1;
-        transform: translate(-50%, 0) scale(.5);
+        transform: translate(0, $letterTransformTop);
     }
 
     70%
@@ -260,7 +424,33 @@ $cloudDuration: 20s;
 
     100%
     {
-        transform: translate(-50%, #{-1 * $skyLevel - 50px});
+        z-index: 1;
+        transform: translate(0, calc(#{-1 * $transformTop + $letterTransformTop + 300px} - 50vh));
+    }
+}
+
+
+@keyframes envelope-letter-container-out
+{
+    0%
+    {
+        transform: translate(0, 0);
+    }
+
+    50%
+    {
+        z-index: 1;
+        transform: translate(0, 0);
+    }
+
+    70%
+    {
+        z-index: 1;
+    }
+
+    100%
+    {
+        
         z-index: 1;
     }
 }
@@ -279,25 +469,7 @@ $cloudDuration: 20s;
 
     100%
     {
-        transform: translate(0, $skyLevel + 50px);
-    }
-}
-
-@keyframes envelope-shadow-out
-{
-    0%
-    {
-        transform: translate(0, 0px);
-    }
-
-    50%
-    {
-        transform: translate(0, 0px);
-    }
-
-    100%
-    {
-        transform: translate(0, $skyLevel + 50px);
+        transform: translate(0, $transformTop);
     }
 }
 
@@ -311,26 +483,13 @@ $cloudDuration: 20s;
     50%
     {
         z-index: 0;
-        transform: translate(0, 10px) rotateX(180deg);
+        transform: translate(0, 1px) rotateX(180deg);
     }
 
     100%
     {
         z-index: 0;
-        transform: translate(0, 10px) rotateX(180deg);
-    }
-}
-
-@keyframes envelope-background-out
-{
-    50%
-    {
-        transform: translateY(0);
-    }
-
-    100%
-    {
-        transform: translateY($skyLevel);
+        transform: translate(0, 1px) rotateX(180deg);
     }
 }
 
@@ -363,5 +522,212 @@ $cloudDuration: 20s;
     100%
     {
         transform: translateX(calc(100vw + 100px))
+    }
+}
+
+@keyframes envelope-right-bottom-leaves-animation
+{
+    0%
+    {
+        transform: rotateZ(0);
+    }
+
+    10%
+    {
+        transform: rotateZ(-3deg);
+    }
+
+    30%
+    {
+        transform: rotateZ(-7deg);
+    }
+
+    50%
+    {
+        transform: rotateZ(-2deg);
+    }
+
+    80%
+    {
+        transform: rotateZ(-8deg);
+    }
+
+    100%
+    {
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes envelope-left-bottom-leaves-animation
+{
+    0%
+    {
+        transform: rotateZ(0);
+    }
+
+    20%
+    {
+        transform: rotateZ(-2deg);
+    }
+
+    40%
+    {
+        transform: rotateZ(-3deg);
+    }
+
+    60%
+    {
+        transform: rotateZ(-1deg);
+    }
+
+    90%
+    {
+        transform: rotateZ(-6deg);
+    }
+
+    100%
+    {
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes envelope-left-top-leaves-animation
+{
+    0%
+    {
+        transform: rotateZ(0);
+    }
+
+    25%
+    {
+        transform: rotateZ(2deg);
+    }
+
+    45%
+    {
+        transform: rotateZ(3deg);
+    }
+
+    65%
+    {
+        transform: rotateZ(1deg);
+    }
+
+    85%
+    {
+        transform: rotateZ(6deg);
+    }
+
+    100%
+    {
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes envelope-leave-animation-1
+{
+    0%
+    {
+        transform: translate(0, 0) rotateZ(0deg);
+    }
+
+    5%
+    {
+        transform: translate(-10vw, 15vh) rotateZ(40deg);
+    }
+
+    10%
+    {
+        transform: translate(-20vw, 35vh) rotateZ(80deg);
+    }
+
+    15%
+    {
+        transform: translate(-30vw, 45vh) rotateZ(120deg);
+    }
+
+    20%
+    {
+        transform: translate(-45vw, 60vh) rotateZ(80deg);
+    }
+
+    25%
+    {
+        transform: translate(-52vw, 75vh) rotateZ(120deg);
+    }
+
+    30%
+    {
+        transform: translate(-60vw, 90vh) rotateZ(160deg);
+    }
+
+    35%
+    {
+        transform: translate(-68vw, 105vh) rotateZ(200deg);
+    }
+
+    40%
+    {
+        transform: translate(-82vw, 120vh) rotateZ(240deg);
+    }
+
+    45%
+    {
+        transform: translate(-90vw, 135vh) rotateZ(200deg);
+    }
+
+    50%
+    {
+        transform: translate(-100vw, 150vh) rotateZ(160deg);
+    }
+
+    55%
+    {
+        transform: translate(-108vw, 165vh) rotateZ(120deg);
+    }
+
+    60%
+    {
+        transform: translate(-122vw, 180vh) rotateZ(180deg);
+    }
+
+    65%
+    {
+        transform: translate(-133vw, 195vh) rotateZ(140deg);
+    }
+
+    70%
+    {
+        transform: translate(-140vw, 210vh) rotateZ(180deg);
+    }
+
+    75%
+    {
+        transform: translate(-150vw, 225vh) rotateZ(120deg);
+    }
+
+    80%
+    {
+        transform: translate(-165vw, 240vh) rotateZ(80deg);
+    }
+
+    85%
+    {
+        transform: translate(-175vw, 255vh) rotateZ(40deg);
+    }
+
+    90%
+    {
+        transform: translate(-184vw, 270vh) rotateZ(0deg);
+    }
+
+    95%
+    {
+        transform: translate(-194vw, 285vh) rotateZ(-40deg);
+    }
+
+    100%
+    {
+        transform: translate(-220vw, 300vh) rotateZ(-120deg);
     }
 }

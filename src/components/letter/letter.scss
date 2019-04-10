@@ -1,71 +1,102 @@
-
-
 .letter
 {
-    padding: 50px 50px 80px;
+    padding: 50px 68px;
+    box-sizing: border-box;
 
     position: relative;
 
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 
-    width: 800px;
-    height: 370px;
+    font-family: Merriweather;
+    letter-spacing: 0.1em;
 
-    line-height: 50px;
+    width: 600px;
+    height: 603px;
 
-
-    background: #f1f2f6;
+    background: #FFFDFA;
 
     z-index: 1;
 
-    font-size: 40px;
-
     text-align: justify;
 
-    p
+    &__link
     {
-        margin: 0;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+
+        color: #D65D3C;
+
+        text-decoration: none;
     }
 
-
     &__title
-    {
-        margin: 0 auto;
+    {              
+        font-family: Solena;
+        font-size: 64px;
+        font-weight: 200;
+        line-height: normal;
+        margin: 0;
 
-        font-size: 50px;
-        line-height: 80px;
-
-        text-align: center;
+        color: #000000;
     }
 
     &__text
     {
-        display: flex;
-        flex-direction: column;
+        font-size: 12px;
+        line-height: 18px;
+        text-transform: uppercase;
 
-        justify-content: space-between;
-        flex: 1;
+        color: #7A7A7A;
+
+        &_main
+        {
+            color: #000;
+            text-transform: none;
+            line-height: 50px;
+            font-size: 40px;
+
+            width: 470px;
+            font-size: 64px;
+            line-height: 68px;
+
+            font-family: Solena;
+        }
+
+        &_center
+        {
+            align-self: center;
+            text-align: center;
+        }
+
+        &_only
+        {
+            flex: 1;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            display: flex;        
+        }
     }
 
     &__buttons
     {
         display: flex;
 
-        position: absolute;
-
+        align-self: center;
         justify-content: space-around;
         bottom: 20px;
         right: 20px;
 
-        width: 300px;
+        width: 400px;
     }
 
     &__spin
     {
         margin: 10px;
-
-        transform: translateX(50%);
     }
 
     &__button
@@ -75,6 +106,7 @@
         padding: 10px 20px;
         margin: 0 5px;
         font-size: 20px;
+        background: none;
 
         font-family: Helvetica, sans-serif;
         
@@ -85,43 +117,76 @@
         {
             &_approve
             {
-
-                background: #7bed9f;
+                font-size: 16px;
+                color: #fff;
+                padding: 15px 50px;
+                background: #2A4D60;
+                border-radius: 44px;
 
                 &:hover
                 {
-                    background: #2ed573;
+                    background: #43728c;
                 }
 
                 &:active
                 {
-                    background: #2ccb6e;
+                    background: #224150;
                 }
             }
 
             &_reject
             {
-                background: #ff6b81;
-
                 &:hover
                 {
-                    background: #ff4757;
-                }
-
-                &:active
-                {
-                    background: #db4352;
+                    opacity: .8;
                 }
             }
         }
     }
 
+    &__devider
+    {
+        height: 26px;
+    }
+
     &__palette
     {
-        width: 400px;
+        width: 100%;
 
-        position: absolute;
+        display: flex;
+        justify-content: space-between;
+    }
 
-        margin: 0 20px;
+    &__palette-color
+    {
+        width: 68px;
+        height: 68px;
+
+        border-radius: 50%;
+
+        &:nth-child(1)
+        {
+            background: #c86446;
+        }
+
+        &:nth-child(2)
+        {
+            background: #ecad83
+        }
+
+        &:nth-child(3)
+        {
+            background: #c5d1db;
+        }
+
+        &:nth-child(4)
+        {
+            background: #324d5e;
+        }
+
+        &:nth-child(5)
+        {
+            background: #b09f94;
+        }
     }
 }

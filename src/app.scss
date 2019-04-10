@@ -1,6 +1,6 @@
 .app
 {
-    background: #81ecec;
+    background: #d0dde7;
     position: relative;
 
     display: flex;
@@ -12,7 +12,8 @@
 
     &__content
     {
-        height: 100vh;
         width: 100vw;
+        min-height: 100vh;
+        overflow: hidden;
     }
 }

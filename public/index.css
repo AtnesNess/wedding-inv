@@ -1,8 +1,10 @@
  @font-face {
-  font-family: 'Acquest Script';
+  font-family: Solena;
   font-style: normal;
   font-weight: 400;
-  src: local('Acquest Script'), local('AcquestScript-Regular'),
-      url('./acquest-script.woff') format('woff'),
-      url('./acquest-script.ttf') format('truetype');
+  src: local(Solena), local(Solena-Regular),
+      url('./Solena-Regular.woff') format('woff'),
+      url('./Solena-Regular.woff2') format('woff2'),
+      url('./Solena-Regular.otf') format('otf'),
+      url('./acquest-script.ttf') format('ttf');
 }
