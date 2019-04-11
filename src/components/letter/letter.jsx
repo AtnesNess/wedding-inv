@@ -144,6 +144,10 @@ export default class Letter extends React.PureComponent {
                         пристутствовать на нашей свадьбе.
                         <div className="letter__devider" />
                         Если передумаете - дайте нам знать!
+                        <div className="letter__devider" />
+                        08.05.19 мы будем вычеркивать гостей, которые отклонили приглашение,
+                        поэтому если вы сделали это случайно, то пожалуйста обновите страницу и
+                        примите приглашение.
                     </section>
                 </div>
             );
