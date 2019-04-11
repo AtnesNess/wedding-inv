@@ -60,6 +60,7 @@ export default class Envelope extends React.Component {
                 </div>
                 <div className="envelope__sheet" onAnimationEnd={this.handleAnimationEnd}>
                     <svg className="envelope__back-cover" width="690" height="391" viewBox="0 0 690 391" fill="none">
+                        <path d="M0 0H690V386C690 388.761 687.761 391 685 391H5C2.23858 391 0 388.761 0 386V0Z" fill="#fff" />   
                         <path d="M0 0H690V386C690 388.761 687.761 391 685 391H5C2.23858 391 0 388.761 0 386V0Z" fill="url(#cover-img)" />
                         <path d="M344.496 116L1 1H691L344.496 116Z" stroke="#F3F3F3" fill="#F8F8F8" />
                         <defs>
@@ -80,11 +81,17 @@ export default class Envelope extends React.Component {
                         </defs>
                         <path
                             d="M0 0H690V386C690 388.761 687.761 391 685 391H5C2.23858 391 0 388.761 0 386V0Z"
+                            mask="url(#head-mask)"
+                            fill="#fff" 
+                        />
+                        <path
+                            d="M0 0H690V386C690 388.761 687.761 391 685 391H5C2.23858 391 0 388.761 0 386V0Z"
                             mask="url(#head-mask)" 
                             fill="url(#cover-img)" 
                         />
                     </svg>
                     <svg className="envelope__head"  width="690" height="391" viewBox="0 0 690 391" fill="none">
+                        <path d="M344.496 116L1 1H691L344.496 116Z" stroke="#F3F3F3" fill="#fff" />
                         <path d="M344.496 116L1 1H691L344.496 116Z" stroke="#F3F3F3" fill="url(#cover-img)" />
                     </svg>
                     <section className="envelope__signature">
