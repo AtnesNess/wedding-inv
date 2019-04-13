@@ -4,7 +4,7 @@ from index.models import Guest
 
 
 class GuestAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'count', 'attendance')
+    list_display = ('id', 'name', 'info', 'count', 'attendance')
 
 
 admin.site.register(Guest, GuestAdmin)
