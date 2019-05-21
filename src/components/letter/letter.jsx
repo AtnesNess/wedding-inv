@@ -75,7 +75,7 @@ export default class Letter extends React.PureComponent {
                         Приглашаем вас стать частью этого особого события
                     </section>
                     <section className={b('letter', 'text', {center: true})}>
-                        Пожалуйста, подтвердите свое <br /> присутствие до 08.05.19
+                        Пожалуйста, подтвердите свое <br /> присутствие до 28.05.19
                     </section>
                     {loading
                         ? (
@@ -145,7 +145,7 @@ export default class Letter extends React.PureComponent {
                         <div className="letter__devider" />
                         Если передумаете - дайте нам знать!
                         <div className="letter__devider" />
-                        08.05.19 мы будем вычеркивать гостей, которые отклонили приглашение,
+                        28.05.19 мы будем вычеркивать гостей, которые отклонили приглашение,
                         поэтому если вы сделали это случайно, то пожалуйста обновите страницу и
                         примите приглашение.
                     </section>
