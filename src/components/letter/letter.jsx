@@ -48,7 +48,6 @@ export default class Letter extends React.PureComponent {
             loading: true
         });
 
-
          fetch('/api/guest/', {
             method: 'POST',
             headers: {
@@ -70,12 +69,22 @@ export default class Letter extends React.PureComponent {
         if (status === null) {
              return (
                 <div className={cx('letter', mix)}>
-                    <section className={b('letter', 'text', {main: true, center: true})}>
-                        8 июня 2019 — день, когда мы станем семьей. 
-                        Приглашаем вас стать частью этого особого события
+                    <section className={b('letter', 'text', {center: true})}>
+                        Мы будем рады видеть вас среди гостей праздничного вечера в честь нашей свадьбы
+                    </section>
+                    <div className="letter__devider" />
+                    <section className={b('letter', 'text', {center: true, large: true, highlight: true})}>
+                        15.08.2020
+                    </section>
+                    <div className="letter__devider" />
+                    <section className={b('letter', 'text', {center: true})}>
+                        Зал приемов Синара-центр, <br /> г. Екатеринбург, ул. Верх-Исетский бульвар, 15
                     </section>
                     <section className={b('letter', 'text', {center: true})}>
-                        Пожалуйста, подтвердите свое <br /> присутствие до 28.05.19
+                        Сбор гостей в 16:30
+                    </section>
+                    <section className={b('letter', 'text', {center: true})}>
+                        Пожалуйста, подтвердите свое присутствие до 15.07.20
                     </section>
                     {loading
                         ? (
@@ -94,7 +103,7 @@ export default class Letter extends React.PureComponent {
                                     onClick={this.handleReject}
                                     className={b('letter', 'button', {type: 'reject'})}
                                 >
-                                    Отклонить
+                                    Отказаться
                                 </button>
                             </section>
                         )}
@@ -103,33 +112,37 @@ export default class Letter extends React.PureComponent {
         } else if (status === 'approved') {
             return (
                 <div className={cx('letter', mix)}>
-                    <h1 className="letter__title">Отлично!</h1>
-                    <section className="letter__text">
-                        Теперь мы знаем, что вы придете.
-                        <div className="letter__devider" />
-                        Ждем 8 июня в 16:00 в банкетном зале «Пятница», по адресу 
-                        г. Екатеринбург, ул. Сибирский тракт, 12 (Бизнес-комплекс «Квартал»), строение 1А.
-                        <div className="letter__devider" />
-                        <a 
-                            className="letter__link" 
-                            href="https://yandex.ru/maps/54/yekaterinburg/?ll=60.651445%2C56.822449&mode=search&oid=90769320962&ol=biz&z=18"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Открыть в Яндекс.Картах 
-                        </a>
+                    <section className={b('letter', 'text', {center: true})}>
+                        Dress-code
                     </section>
-                    <div className="letter__devider" />
-                    <section className="letter__text">
-                        Нам будет приятно, если ваш наряд будет соответствовать данной цветовой палитре:
+                    <section className={b('letter', 'text', {center: true, large: true, highlight: true})}>
+                        Cocktail
+                    </section>
+                    <section className={b('letter', 'text', {center: true})}>
+                        Нам будет приятно, если дамы выберут наряды пастельных оттенков
                         <div className="letter__devider" />
-                        <div className="letter__palette">
+                        <div className={b('letter', 'palette', {type: 'woman'})}>
                             <div className="letter__palette-color" />
                             <div className="letter__palette-color" />
                             <div className="letter__palette-color" />
                             <div className="letter__palette-color" />
                             <div className="letter__palette-color" />
                         </div>
+                    </section>
+
+                    <section className={b('letter', 'text', {center: true})}>
+                        А джентльмены предпочтут костюмы следующих цветов
+                        <div className="letter__devider" />
+                        <div className={b('letter', 'palette', {type: 'man'})}>
+                            <div className="letter__palette-color" />
+                            <div className="letter__palette-color" />
+                            <div className="letter__palette-color" />
+                            <div className="letter__palette-color" />
+                            <div className="letter__palette-color" />
+                        </div>
+                    </section>
+                    <section className={b('letter', 'text', {center: true})}>
+                        Приветствуем позитивное настроение, праздничный вид и подарки в любой конвертируемой валюте
                     </section>
                 </div>
             );
@@ -145,7 +158,7 @@ export default class Letter extends React.PureComponent {
                         <div className="letter__devider" />
                         Если передумаете - дайте нам знать!
                         <div className="letter__devider" />
-                        28.05.19 мы будем вычеркивать гостей, которые отклонили приглашение,
+                        30.07.20 мы будем вычеркивать гостей, которые отклонили приглашение,
                         поэтому если вы сделали это случайно, то пожалуйста обновите страницу и
                         примите приглашение.
                     </section>
@@ -154,7 +167,7 @@ export default class Letter extends React.PureComponent {
         } else if (status === 'error') {
             return (
                 <div className={cx('letter', mix)}>
-                    <h1 className="letter__title">Что то пошло не так...</h1>
+                    <h1 className="letter__title">Что-то пошло не так...</h1>
                     <section className={b('letter', 'text', {center: true, only: true})}>
                         Сайт сломался и не записал данные о Вашем присутствии
                         <div className="letter__devider" />
