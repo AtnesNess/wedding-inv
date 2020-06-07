@@ -9,7 +9,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    font-family: ALS NF64;
+    font-family: ALSNF64;
     font-size: 14px;
     letter-spacing: 0.1em;
     color: #4F4F4F;
@@ -37,19 +37,18 @@
 
     &__title
     {
-        font-family: ALS NF64;
-        font-size: 48px;
+        font-family: ALSNF64;
+        font-size: 30px;
         font-weight: 200;
         line-height: normal;
         margin: 0;
 
         color: #000000;
-        letter-spacing: initial;
     }
 
     &__text
     {
-        font-size: 12px;
+        font-size: 14px;
         line-height: 18px;
         text-transform: uppercase;
         max-width: 350px;
@@ -68,8 +67,10 @@
 
         &_highlight
         {
-            font-family: Spring blush;
+            font-family: Springblush;
             color: #E5D093;
+            text-transform: initial;
+            line-height: 0.9em;
         }
 
         &_only
@@ -107,7 +108,7 @@
         padding: 10px 20px;
         margin: 0 5px;
         font-size: 14px;
-        font-family: ALS NF64;
+        font-family: ALSNF64;
         font-size: 14px;
         letter-spacing: 0.1em;
         text-transform: uppercase;

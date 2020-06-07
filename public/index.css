@@ -1,10 +1,26 @@
- @font-face {
-  font-family: Solena;
-  font-style: normal;
-  font-weight: 400;
-  src: local(Solena), local(Solena-Regular),
-      url('./Solena-Regular.woff') format('woff'),
-      url('./Solena-Regular.woff2') format('woff2'),
-      url('./Solena-Regular.otf') format('otf'),
-      url('./Solena-Regular.ttf') format('ttf');
-}
+@font-face {
+    font-family: 'Springblush';
+    src: url('./fonts/Springblush.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/Springblush.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      url('./fonts/Springblush.otf') format('opentype'), /* Open Type Font */
+      url('./fonts/Springblush.svg') format('svg'), /* Legacy iOS */
+      url('./fonts/Springblush.ttf') format('truetype'), /* Safari, Android, iOS */
+      url('./fonts/Springblush.woff') format('woff'), /* Modern Browsers */
+      url('./fonts/Springblush.woff2') format('woff2'); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  /* font converted using font-converter.net. thank you! */
+@font-face {
+    font-family: "ALSNF64";
+    src: url("./fonts/ALSNF64-Regular.eot"); /* IE9 Compat Modes */
+    src: url("./fonts/ALSNF64-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url("./fonts/ALSNF64-Regular.otf") format("opentype"), /* Open Type Font */
+      url("./fonts/ALSNF64-Regular.svg") format("svg"), /* Legacy iOS */
+      url("./fonts/ALSNF64-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+      url("./fonts/ALSNF64-Regular.woff") format("woff"), /* Modern Browsers */
+      url("./fonts/ALSNF64-Regular.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
