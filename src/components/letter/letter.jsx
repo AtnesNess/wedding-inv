@@ -6,8 +6,6 @@ import qs from "query-string";
 
 
 import Spin from '../spin/spin';
-import date from './date.svg';
-import cocktail from './cocktail.svg';
 
 import './letter.scss';
 
@@ -77,7 +75,7 @@ export default class Letter extends React.PureComponent {
                     </section>
                     <div className="letter__devider" />
                     <section className={b('letter', 'text', {center: true, large: true, highlight: true})}>
-                        <img src={date} alt="date" />
+                        <img src="/date.svg" alt="date" />
                     </section>
                     <div className="letter__devider" />
                     <section className={b('letter', 'text', {center: true})}>
@@ -119,7 +117,7 @@ export default class Letter extends React.PureComponent {
                         Dress-code
                     </section>
                     <section className={b('letter', 'text', {center: true, large: true, highlight: true})}>
-                        <img src={cocktail} alt="cocktail" />
+                        <img src="/coctail.svg" alt="cocktail" />
                     </section>
                     <section className={b('letter', 'text', {center: true})}>
                         Нам будет приятно, если дамы выберут наряды пастельных оттенков
