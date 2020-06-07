@@ -75,7 +75,7 @@ export default class Letter extends React.PureComponent {
                     </section>
                     <div className="letter__devider" />
                     <section className={b('letter', 'text', {center: true, large: true, highlight: true})}>
-                        <img src="/date.svg" alt="date" />
+                        <img src="/static/date.svg" alt="date" />
                     </section>
                     <div className="letter__devider" />
                     <section className={b('letter', 'text', {center: true})}>
@@ -117,7 +117,7 @@ export default class Letter extends React.PureComponent {
                         Dress-code
                     </section>
                     <section className={b('letter', 'text', {center: true, large: true, highlight: true})}>
-                        <img src="/coctail.svg" alt="cocktail" />
+                        <img src="/static/cocktail.svg" alt="cocktail" />
                     </section>
                     <section className={b('letter', 'text', {center: true})}>
                         Нам будет приятно, если дамы выберут наряды пастельных оттенков
